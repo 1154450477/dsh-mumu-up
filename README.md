@@ -33,6 +33,12 @@ DSH 插件。**判定条件跟 [dsh-speak-up](https://github.com/Yuuyuko-uu/dsh-
 | 控制口 | `http://127.0.0.1:8791` | mumu-mcp 的本机控制口，用来问「手机是不是已经在玩」 |
 | 手机忙时跳过 | `true` | 手机已经在玩 → 这轮不唤醒（不打断她）。关掉就完全不问控制口 |
 
+### 和 mumu-mcp 闲时自主玩的关系
+
+mumu-mcp 自带一个「闲时自主玩」调度器（`autoplay_enable`，默认关）。**装了本插件就别开它** ——
+什么时候玩手机由这里掷骰决定（峰谷命中线 / 没中加成 / 时机因子），mumu-mcp 不再自己定时开，
+不然两套调度会重复叫她玩。定时计划（`mumu_phone_autoplay schedule`）不受影响，照常到点开。
+
 ## 装
 
 ```bash
