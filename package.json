@@ -1,0 +1,51 @@
+{
+  "name": "dsh-mumu-up",
+  "version": "0.2.1",
+  "description": "手机唤醒器（dsh-mumu-up）：DSH 插件。按 dsh-speak-up 一模一样的判定条件（间隔 / 峰谷命中线 / 没中加成 / 安静时段 / 近远时机因子 / 冷却）掷一次本地骰子（不花模型），掷中就把她叫去玩手机；手机已经在玩的时候不打断她。",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "initiative",
+    "proactive",
+    "mumu",
+    "phone"
+  ],
+  "main": "lib/host.js",
+  "exports": {
+    ".": "./lib/host.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "tests",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ],
+      "external": [
+        "react"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1154450477/dsh-mumu-up.git"
+  },
+  "homepage": "https://github.com/1154450477/dsh-mumu-up#readme",
+  "bugs": {
+    "url": "https://github.com/1154450477/dsh-mumu-up/issues"
+  }
+}
